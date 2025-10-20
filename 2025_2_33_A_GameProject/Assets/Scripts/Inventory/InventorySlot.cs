@@ -16,6 +16,15 @@ public class InventorySlot : MonoBehaviour
         UpdateSlotUI();
     }
 
+    void OnSlotButtonClicked()
+    {
+        if (item != null)
+        {
+            ItemUsePopup.Instance.ShowPopup(item, this);
+        }
+
+    }
+
     public void SetItem(ItemData newitem, int newAmount)
     {
         item = newitem;
@@ -49,7 +58,7 @@ public class InventorySlot : MonoBehaviour
     public void Addmount(int vaiue)
     {
         amount += vaiue;
-        UpdateSlotUI();    
+        UpdateSlotUI();
     }
 
     public void RemoveAmount(int value)
@@ -60,7 +69,7 @@ public class InventorySlot : MonoBehaviour
             ClearSlot();
         else
             UpdateSlotUI();
-            
+
     }
 
     public void ClearSlot()
